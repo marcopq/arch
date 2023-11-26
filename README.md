@@ -13,3 +13,19 @@ btrfsSubvolumes:
     - mountPoint: /.snapshots
       subvolume: /@snapshots
 ```
+## Paquetes
+```
+pacman -Sy 
+```
+## Servicios
+```
+ sudo systemctl enable 
+```
+## BTRFS con snapshots y rollback en arch linux
+```
+ 
+```
+## 
+```
+ 
+```
