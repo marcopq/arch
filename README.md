@@ -13,7 +13,7 @@ btrfsSubvolumes:
 ```
 ## Paquetes
 ```
-pacman -Sy 
+pacman -Sy htop ripgrep duperemove flatpak steam
 ```
 ## Servicios
 ```
@@ -117,7 +117,6 @@ snapper -c root delete --sync N
 ```
 Directorios excluidos por defecto
 https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-snapper.html#snapper-dir-excludes
-
 ## Zram
 ### Desactivar zswap
 ```
