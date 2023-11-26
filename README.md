@@ -13,7 +13,7 @@ btrfsSubvolumes:
 ```
 ## Paquetes
 ```
-pacman -Sy htop ripgrep duperemove flatpak steam
+pacman -Sy htop ripgrep duperemove pkgfile flatpak steam
 ```
 ## Servicios
 ```
