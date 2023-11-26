@@ -1,5 +1,5 @@
 # arch
-
+Hacer la instalación sin swap y usando btrfs.
 ## En EndeavourOS Live-CD editar:
 btrfsSubvolumes:
 ```
@@ -20,11 +20,9 @@ pacman -Sy
  sudo systemctl enable 
 ```
 ## BTRFS con snapshots y rollback en arch linux
-
 https://wiki.archlinux.org/title/snapper
 https://www.dwarmstrong.org/btrfs-snapshots-rollbacks/
 https://github.com/Antynea/grub-btrfs/blob/master/initramfs/readme.md
-## Snapper
 ```
 pacman -S snapper snap-pac grub-btrfs inotify-tools 
 ```
@@ -119,3 +117,53 @@ snapper -c root delete --sync N
 ```
 Directorios excluidos por defecto
 https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-snapper.html#snapper-dir-excludes
+
+## Zram
+### Desactivar zswap
+```
+echo 0 > /sys/module/zswap/parameters/enabled
+```
+Agregar `zswap.enabled=0` a los parámetros del kernel:
+```
+nano /etc/default/grub
+```
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+Reiniciar el sistema para que se apliquen los cambios.
+### Activar zram
+```
+pacman -S zram-generator
+```
+```
+nano /etc/systemd/zram-generator.conf
+```
+```
+[zram0]
+zram-size = ram / 2
+compression-algorithm = zstd
+swap-priority = 100
+fs-type = swap
+```
+```
+sudo systemctl daemon-reload
+```
+```
+sudo systemctl start systemd-zram-setup@zram0.service
+```
+Para comprobar si esta activa la zram, hay 2 formas:
+```
+systemctl status systemd-zram-setup@zram0.service
+```
+```
+zramctl
+```
+### Optimizar zram
+```
+nano /etc/sysctl.d/99-vm-zram-parameters.conf
+```
+```
+vm.swappiness = 180
+vm.watermark_boost_factor = 0
+vm.watermark_scale_factor = 125
+vm.page-cluster = 0
