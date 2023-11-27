@@ -11,8 +11,6 @@ sudo nano /etc/calamares/modules/mount.conf
 ```
     - mountPoint: /var/cache/pacman/pkg
       subvolume: /@pkg
-    - mountPoint: /.snapshots
-      subvolume: /@snapshots
 ```
 ## Paquetes
 ```
