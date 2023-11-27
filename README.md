@@ -16,7 +16,7 @@ sudo nano /etc/calamares/modules/mount.conf
 ```
 ## Paquetes
 ```
-pacman -Sy htop ripgrep duperemove pkgfile flatpak partitionmanager steam
+pacman -Sy htop ripgrep duperemove pkgfile flatpak partitionmanager nvidia-settings steam
 ```
 ## Servicios
 ```
