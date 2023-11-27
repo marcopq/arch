@@ -1,6 +1,9 @@
 # arch
 Hacer la instalación sin swap y usando btrfs.
 ## En EndeavourOS Live-CD editar:
+```
+reflector --country Chile --age 6 --sort rate --save /etc/pacman.d/mirrorlist; pacman -Sy
+```
 btrfsSubvolumes:
 ```
 /etc/calamares/modules/mount.conf
@@ -49,7 +52,7 @@ sudo chmod 750 /.snapshots && sudo chown :wheel /.snapshots
 ```
 ### Automatic timeline snapshots
 ```
-nano /etc/snapper/configs/root
+sudo nano /etc/snapper/configs/root
 ```
 El límite de las snap programadas por hora que se conservarán:
 ```
@@ -72,7 +75,7 @@ sudo systemctl enable --now snapper-cleanup.timer
 ### Updatedb
 Si esta instalado `locate`
 ```
-nano /etc/updatedb.conf
+sudo nano /etc/updatedb.conf
 ```
 PRUNENAMES = ".snapshots"
 ### Auto-update GRUB
@@ -81,7 +84,7 @@ sudo systemctl enable --now grub-btrfsd
 ```
 Para bootear snaps en mode rw sin que se guarden los cambios:
 ```
-nano /etc/default/grub-btrfs/config
+sudo nano /etc/default/grub-btrfs/config
 ```
 ```
 GRUB_BTRFS_SNAPSHOT_KERNEL_PARAMETERS="rd.live.overlay.overlayfs=1"
@@ -113,7 +116,7 @@ sudo btrfs subvolume list -o @/.snapshots
 ```
 Borrar snapshots. `--sync` libera el espacio inmediatamente y `N` es el número de la snap. Se pueden especificar varias (60 65) y por rango (60-65). Snaps pre pro deben eliminarse juntas:
 ```
-snapper -c root delete --sync N
+sudo  snapper -c root delete --sync N
 ```
 Directorios excluidos por defecto
 https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-snapper.html#snapper-dir-excludes
@@ -124,18 +127,18 @@ echo 0 > /sys/module/zswap/parameters/enabled
 ```
 Agregar `zswap.enabled=0` a los parámetros del kernel:
 ```
-nano /etc/default/grub
+sudo  nano /etc/default/grub
 ```
 ```
-grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 Reiniciar el sistema para que se apliquen los cambios.
 ### Activar zram
 ```
-pacman -S zram-generator
+sudo  pacman -S zram-generator
 ```
 ```
-nano /etc/systemd/zram-generator.conf
+sudo nano /etc/systemd/zram-generator.conf
 ```
 ```
 [zram0]
@@ -159,7 +162,7 @@ zramctl
 ```
 ### Optimizar zram
 ```
-nano /etc/sysctl.d/99-vm-zram-parameters.conf
+sudo nano /etc/sysctl.d/99-vm-zram-parameters.conf
 ```
 ```
 vm.swappiness = 180
