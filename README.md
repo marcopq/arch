@@ -111,7 +111,7 @@ https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-snapper.html#snappe
 ## Zram
 ### Desactivar zswap
 ```
-echo 0 > /sys/module/zswap/parameters/enabled
+sudo bash -c "echo 0 > /sys/module/zswap/parameters/enabled"
 ```
 Agregar `zswap.enabled=0` a los parámetros del kernel:
 ```
