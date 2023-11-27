@@ -16,11 +16,14 @@ sudo nano /etc/calamares/modules/mount.conf
 ```
 ## Paquetes
 ```
-pacman -Sy htop ripgrep duperemove pkgfile flatpak partitionmanager syncthing nvidia-settings steam
+pacman -Sy htop ripgrep duperemove pkgfile flatpak xdg-desktop-portal-kde partitionmanager nvidia-settings syncthing kwalletmanager nvidia-settings steam
+```
+```
+flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup net.davidotek.pupgui2 com.usebottles.bottles
 ```
 ## Servicios
 ```
- sudo systemctl enable 
+ sudo systemctl enable --now bluetooth.service avahi-daemon syncthing.service
 ```
 ## BTRFS con snapshots y rollback en arch linux
 https://wiki.archlinux.org/title/snapper
@@ -37,19 +40,6 @@ This generates:
 - Configuration file at `/etc/snapper/configs/root`.
 - Add `root` to `SNAPPER_CONFIGS` in `/etc/conf.d/snapper`.
 - Subvolume `.snapshots` where future snapshots for this configuration will be stored.
-### Setup .snapshots
-```
-sudo btrfs subvolume list /
-```
-```
-sudo btrfs subvolume delete .snapshots
-```
-```
-sudo mkdir /.snapshots && sudo mount -a
-```
-```
-sudo chmod 750 /.snapshots && sudo chown :wheel /.snapshots
-```
 ### Automatic timeline snapshots
 ```
 sudo nano /etc/snapper/configs/root
