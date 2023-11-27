@@ -2,7 +2,7 @@
 Hacer la instalación sin swap y usando btrfs.
 ## En EndeavourOS Live-CD editar:
 ```
-sudo reflector --country Chile --age 6 --sort rate --save /etc/pacman.d/mirrorlist; pacman -Sy
+sudo reflector --country Chile --age 6 --sort rate --save /etc/pacman.d/mirrorlist; cat /etc/pacman.d/mirrorlist
 ```
 btrfsSubvolumes:
 ```
