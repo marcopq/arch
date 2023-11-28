@@ -17,6 +17,9 @@ sudo nano /etc/calamares/modules/mount.conf
 pacman -Sy htop ripgrep duperemove pkgfile flatpak xdg-desktop-portal-kde partitionmanager syncthing kwalletmanager nvidia-settings steam
 ```
 ```
+yay -S uxplay xpadneo-dkms
+```
+```
 flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup net.davidotek.pupgui2 com.usebottles.bottles
 ```
 ## Servicios
