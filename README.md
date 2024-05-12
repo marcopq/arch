@@ -20,7 +20,7 @@ flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian o
 ```
 ## GRUB
 ### Detectar otro OS y agregar entrada en el grub
-Editar `/etc/default/grub` y decomentar:
+Editar `/etc/default/grub` y descomentar:
 ```
 GRUB_DISABLE_OS_PROBER=false
 ```
