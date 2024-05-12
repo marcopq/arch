@@ -1,5 +1,5 @@
 # arch
-Hacer la instalación sin swap y usando btrfs.
+Hacer la instalación sin swap y usando btrfs. Si ya hay una partición EFI de otro OS, se puede usar una partición btrfs y con calamares elegir la opción de reemplazar partición (se perderá el contenido de la partición btrfs), el instalador usará automáticamente si borrar la partición EFI sin afectar al otro OS y el dual boot.
 ## En el Live-CD editar:
 ```
 sudo reflector --country Chile --age 6 --sort rate --save /etc/pacman.d/mirrorlist; cat /etc/pacman.d/mirrorlist
@@ -18,7 +18,7 @@ flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian o
 ```
  sudo systemctl enable --now syncthing.service
 ```
-## Comandos
+## Arreglos
 Mejora rendimiendo con Gamescope
 ```
  setcap 'CAP_SYS_NICE=eip' $(which gamescope)
