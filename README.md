@@ -18,6 +18,11 @@ flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian o
 ```
  sudo systemctl enable --now syncthing.service
 ```
+## Comandos
+Mejora rendimiendo con Gamescope
+```
+ setcap 'CAP_SYS_NICE=eip' $(which gamescope)
+```
 ## CachyOS Hello App
 Desde la aplicación instalar Snapper y Gaming Packages
 ## BTRFS snapshots
