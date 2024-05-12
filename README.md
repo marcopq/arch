@@ -18,8 +18,18 @@ flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian o
 ```
  sudo systemctl enable --now syncthing.service
 ```
+## GRUB
+### Detectar otro OS y agregar entrada en el grub
+Editar `/etc/default/grub` y decomentar:
+```
+GRUB_DISABLE_OS_PROBER=false
+```
+Generar nueva configuración grub:
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 ## Arreglos
-Mejora rendimiendo con Gamescope
+Mejora rendimiendo con Gamescope:
 ```
  setcap 'CAP_SYS_NICE=eip' $(which gamescope)
 ```
