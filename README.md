@@ -49,55 +49,14 @@ Ejecución
 ```
 shairport-sync -o pa -a NOMBRE
 ```
-## Zram
-### Desactivar zswap
+## Instalar fuentes de Windows
+Desde una instalación de Windows copiar fuentes desde `Windows/Fonts` hacia:
 ```
-sudo bash -c "echo 0 > /sys/module/zswap/parameters/enabled"
+~/.local/share/fonts
 ```
-Agregar `zswap.enabled=0` a los parámetros del kernel:
+Ver si el sistema las reconoce con:
 ```
-sudo  nano /etc/default/grub
-```
-```
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-Reiniciar el sistema para que se apliquen los cambios.
-### Activar zram
-```
-sudo  pacman -S zram-generator
-```
-```
-sudo nano /etc/systemd/zram-generator.conf
-```
-```
-[zram0]
-zram-size = ram / 2
-compression-algorithm = zstd
-swap-priority = 100
-fs-type = swap
-```
-```
-sudo systemctl daemon-reload
-```
-```
-sudo systemctl start systemd-zram-setup@zram0.service
-```
-Para comprobar si esta activa la zram, hay 2 formas:
-```
-systemctl status systemd-zram-setup@zram0.service
-```
-```
-zramctl
-```
-### Optimizar zram
-```
-sudo nano /etc/sysctl.d/99-vm-zram-parameters.conf
-```
-```
-vm.swappiness = 180
-vm.watermark_boost_factor = 0
-vm.watermark_scale_factor = 125
-vm.page-cluster = 0
+fc-list ':' file
 ```
 ## Post Instalación
 - 
