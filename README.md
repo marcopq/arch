@@ -12,7 +12,7 @@ pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover shairport-sync
 paru -S uxplay
 ```
 ```
-flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup net.davidotek.pupgui2 com.usebottles.bottles org.kde.haruna org.kde.haruna
+flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup net.davidotek.pupgui2 com.usebottles.bottles org.kde.haruna it.mijorus.gearlever
 ```
 ## Servicios
 ```
