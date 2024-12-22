@@ -6,7 +6,7 @@ sudo reflector --country Chile --age 6 --sort rate --save /etc/pacman.d/mirrorli
 ```
 ## Paquetes
 ```
-pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover shairport-sync htop ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing
+pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing trash-cli input-remapper
 ```
 ```
 paru -S uxplay
@@ -16,7 +16,7 @@ flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian o
 ```
 ## Servicios
 ```
- sudo systemctl enable --now syncthing.service
+ sudo systemctl --user enable --now syncthing.service
 ```
 ## GRUB
 ### Detectar otro OS y agregar entrada en el grub
@@ -59,4 +59,4 @@ Ver si el sistema las reconoce con:
 fc-list ':' file
 ```
 ## Post Instalación
-- 
+- En Brave ir a `brave://flags/` habilitar Middle button autoscroll para hacer scroll más rápido.
