@@ -39,16 +39,16 @@ Usar Btrfs Assistant para configurar y crear snapshots
 ## Montar Particiones Extras
 Crear carpetas y darles permisos:
 ```
-sudo mkdir /mnt/Almacen
+sudo mkdir /media/Almacen
 sudo chown $USER:$USER /mnt/Almacen
-sudo mkdir /mnt/Extras
+sudo mkdir /media/Extras
 sudo chown $USER:$USER /mnt/Extra
 ```
 Verificar particiones usando `lsblk -f`.
 Agregar al fstab:
 ```
-UUID=5024574F24573766					  /mnt/Almacen   ntfs   defaults,noatime,nofail,users 0 0
-UUID=e1fb76ac-1a48-498c-a4a1-45f1fe765cb6 /mnt/Extra     btrfs   defaults,lazytime,commit=120,compress=zstd,nofail,noatime,users 0 0
+UUID=5024574F24573766					  /media/Almacen   ntfs   defaults,noatime,nofail,users 0 0
+UUID=e1fb76ac-1a48-498c-a4a1-45f1fe765cb6 /media/Extra     btrfs   defaults,lazytime,commit=120,compress=zstd,nofail,noatime,users 0 0
 ```
 Montar particiones:
 ```
