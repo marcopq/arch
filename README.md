@@ -30,9 +30,9 @@ Generar nueva configuración grub:
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 ## Arreglos
-Mejora rendimiendo con Gamescope:
+Cambia orden de resultados de paru para más comodidad, decomentar `BottomUp` en:
 ```
- setcap 'CAP_SYS_NICE=eip' $(which gamescope)
+ sudo micro /etc/paru.conf
 ```
 ## CachyOS Hello App
 Desde la aplicación instalar Snapper y Gaming Packages
