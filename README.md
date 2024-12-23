@@ -9,14 +9,15 @@ sudo reflector --country Chile --age 6 --sort rate --save /etc/pacman.d/mirrorli
 pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing trash-cli input-remapper
 ```
 ```
-paru -S uxplay
+paru -S input-remapper-git
 ```
 ```
 flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup net.davidotek.pupgui2 com.usebottles.bottles org.kde.haruna it.mijorus.gearlever
 ```
 ## Servicios
 ```
- sudo systemctl --user enable --now syncthing.service
+ systemctl --user enable --now syncthing.service
+ sudo systemctl enable --now input-remapper
 ```
 ## GRUB
 ### Detectar otro OS y agregar entrada en el grub
