@@ -4,13 +4,16 @@ Hacer la instalación sin swap y usando btrfs. Si ya hay una partición EFI de o
 
 ## Paquetes
 ```
-pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing trash-cli input-remapper protonup-qt
+pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing trash-cli input-remapper protonup-qt python-pipx
 ```
 ```
 paru -S input-remapper-git google-chrome
 ```
 ```
-flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup net.davidotek.pupgui2 com.usebottles.bottles org.kde.haruna it.mijorus.gearlever
+flatpak install org.keepassxc.KeePassXC com.brave.Browser md.obsidian.Obsidian org.gnome.World.PikaBackup com.usebottles.bottles org.kde.haruna it.mijorus.gearlever
+```
+```
+pipx install lnkparse3
 ```
 ## Servicios
 ```
