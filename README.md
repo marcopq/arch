@@ -4,7 +4,7 @@ Hacer la instalación sin swap y usando btrfs. Si ya hay una partición EFI de o
 
 ## Paquetes
 ```
-pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing trash-cli input-remapper protonup-qt python-pipx
+pacman -Sy grub-btrfs inotify-tools ntfs-3g xpadneo-dkms discover ripgrep duperemove pkgfile flatpak flatpak-kcm xdg-desktop-portal-kde xdg-desktop-portal-gtk partitionmanager syncthing trash-cli input-remapper protonup-qt python-pipx hunspell-en_us hunspell-es_cl
 ```
 ```
 paru -S input-remapper-git google-chrome
